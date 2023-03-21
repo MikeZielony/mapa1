@@ -48,6 +48,7 @@ function onMapClick(e) {
             window.localStorage.setItem("coordinates", JSON.stringify(coordinates));
             var latlng = L.latLng(data.coords.latitude, data.coords.longitude);
             var marker = new L.Marker(latlng, {draggable: false});
+          //  L.map('map').setView([data.coords.longitude, data.coords.longitude], 11);
             map.addLayer(marker);
             marker.bindPopup("<br />I am a here.").openPopup();
         },
