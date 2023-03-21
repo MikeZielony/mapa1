@@ -1,15 +1,15 @@
-var map = L.map('map').setView([51.505, 20], 13);
+var map = L.map('map').setView([50, 20], 11);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-var circle = L.circle([51.508, 20], {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.1,
-    radius: 5000
-}).addTo(map);
+// var circle = L.circle([51.508, 20], {
+//     color: 'red',
+//     fillColor: '#f03',
+//     fillOpacity: 0.1,
+//     radius: 5000
+// }).addTo(map);
 
 // map.on('click', function (e) {
 //     var marker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
@@ -49,7 +49,7 @@ function onMapClick(e) {
             var latlng = L.latLng(data.coords.latitude, data.coords.longitude);
             var marker = new L.Marker(latlng, {draggable: false});
             map.addLayer(marker);
-            marker.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            marker.bindPopup("<br />I am a here.").openPopup();
         },
         error => console.log(error),
         {
